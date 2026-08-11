@@ -10,4 +10,10 @@ pretrained
 pretrained_models
 *.md
 
-OralDetect/
+OralDetect/analysis
+OralDetect/bench_jsons
+OralDetect/datas
+OralDetect/visualization
+OralDetect/tools
+OralDetect/_outdate_files
+OralDetect/launch_logs
