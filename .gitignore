@@ -1,0 +1,13 @@
+.vscode/
+.claude
+AAAI2027
+Baselines
+logs
+OralCLIP
+OralGPT-series
+outputs
+pretrained
+pretrained_models
+*.md
+
+OralDetect/

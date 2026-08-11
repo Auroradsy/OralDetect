@@ -1,0 +1,1914 @@
+W0622 13:41:11.854000 4088732 site-packages/torch/distributed/run.py:793] 
+W0622 13:41:11.854000 4088732 site-packages/torch/distributed/run.py:793] *****************************************
+W0622 13:41:11.854000 4088732 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0622 13:41:11.854000 4088732 site-packages/torch/distributed/run.py:793] *****************************************
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/optim/optimizer/zero_optimizer.py:11: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+  from torch.distributed.optim import \
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/optim/optimizer/zero_optimizer.py:11: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+  from torch.distributed.optim import \
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/optim/optimizer/zero_optimizer.py:11: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+  from torch.distributed.optim import \
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/optim/optimizer/zero_optimizer.py:11: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+  from torch.distributed.optim import \
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:19: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_fwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:30: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_bwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:19: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_fwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:30: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_bwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:19: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_fwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:30: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_bwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:19: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_fwd(orig_func)  # type: ignore
+/home/siyuan/.local/lib/python3.10/site-packages/fairscale/experimental/nn/offload.py:30: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  return torch.cuda.amp.custom_bwd(orig_func)  # type: ignore
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/utils/dl_utils/setup_env.py:56: UserWarning: Setting MKL_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  warnings.warn(
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/utils/dl_utils/setup_env.py:56: UserWarning: Setting MKL_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  warnings.warn(
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/utils/dl_utils/setup_env.py:56: UserWarning: Setting MKL_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  warnings.warn(
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/utils/dl_utils/setup_env.py:56: UserWarning: Setting MKL_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
+  warnings.warn(
+06/22 13:41:17 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]
+    CUDA available: True
+    MUSA available: False
+    numpy_random_seed: 1798672769
+    GPU 0,1,2,3: NVIDIA RTX A6000
+    CUDA_HOME: /usr/local/cuda-11.3
+    NVCC: Cuda compilation tools, release 11.3, V11.3.109
+    GCC: gcc (Ubuntu 9.5.0-1ubuntu1~22.04) 9.5.0
+    PyTorch: 2.5.1+cu124
+    PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.5.3 (Git Hash 66f0cb9eb66affd2da3bf5f8d897376f04aae6af)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 12.4
+  - NVCC architecture flags: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90
+  - CuDNN 90.1
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=12.4, CUDNN_VERSION=9.1.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -Wno-missing-braces -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.5.1, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, 
+
+    TorchVision: 0.20.1+cu124
+    OpenCV: 4.10.0
+    MMEngine: 0.10.7
+
+Runtime environment:
+    cudnn_benchmark: False
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    dist_cfg: {'backend': 'nccl'}
+    seed: 1798672769
+    Distributed launcher: pytorch
+    Distributed training: True
+    GPU number: 4
+------------------------------------------------------------
+
+06/22 13:41:18 - mmengine - INFO - Config:
+CLASS_NAMES = '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_names_en.json'
+CLASS_TEXT = '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json'
+DATAS = '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas'
+DATA_ROOT = '/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/'
+TEST_ANN = '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json'
+TRAIN_ANN = '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_train.json'
+affine_scale = 0.5
+albu_train_transforms = [
+    dict(p=0.01, type='Blur'),
+    dict(p=0.01, type='MedianBlur'),
+    dict(p=0.01, type='ToGray'),
+    dict(p=0.01, type='CLAHE'),
+]
+backend_args = None
+base_lr = 2e-05
+close_mosaic_epochs = 4
+coco_evaluator = dict(
+    ann_file='data/coco/annotations/instances_val2017.json',
+    metric='bbox',
+    type='CocoMetric')
+coco_val_dataset = dict(
+    class_text_path='data/texts/coco_zh_class_texts.json',
+    dataset=dict(
+        ann_file='data/coco/annotations/instances_val2017.json',
+        batch_shapes_cfg=None,
+        data_prefix=dict(img='val2017'),
+        data_root='data/coco/',
+        test_mode=True,
+        type='WeCocoDataset'),
+    pipeline=[
+        dict(backend_args=None, type='LoadImageFromFile'),
+        dict(scale=(
+            640,
+            640,
+        ), type='WeDetectKeepRatioResize'),
+        dict(
+            allow_scale_up=False,
+            pad_val=dict(img=114),
+            scale=(
+                640,
+                640,
+            ),
+            type='WeDetectLetterResize'),
+        dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+        dict(type='LoadText'),
+        dict(
+            meta_keys=(
+                'img_id',
+                'img_path',
+                'ori_shape',
+                'img_shape',
+                'scale_factor',
+                'pad_param',
+                'texts',
+            ),
+            type='PackDetInputs'),
+    ],
+    type='MultiModalDataset')
+custom_hooks = [
+    dict(
+        switch_epoch=8,
+        switch_pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(scale=(
+                640,
+                640,
+            ), type='WeDetectKeepRatioResize'),
+            dict(
+                allow_scale_up=True,
+                pad_val=dict(img=114.0),
+                scale=(
+                    640,
+                    640,
+                ),
+                type='WeDetectLetterResize'),
+            dict(
+                border_val=(
+                    114,
+                    114,
+                    114,
+                ),
+                max_aspect_ratio=100,
+                max_rotate_degree=0.0,
+                max_shear_degree=0.0,
+                scaling_ratio_range=(
+                    0.5,
+                    1.5,
+                ),
+                type='WeDetectRandomAffine'),
+            dict(
+                bbox_params=dict(
+                    format='pascal_voc',
+                    label_fields=[
+                        'gt_bboxes_labels',
+                        'gt_ignore_flags',
+                    ],
+                    type='BboxParams'),
+                keymap=dict(gt_bboxes='bboxes', img='image'),
+                transforms=[
+                    dict(p=0.01, type='Blur'),
+                    dict(p=0.01, type='MedianBlur'),
+                    dict(p=0.01, type='ToGray'),
+                    dict(p=0.01, type='CLAHE'),
+                ],
+                type='mmdet.Albu'),
+            dict(type='WeDetectHSVRandomAug'),
+            dict(prob=0.5, type='mmdet.RandomFlip'),
+            dict(
+                max_num_samples=91,
+                num_neg_samples=(
+                    91,
+                    91,
+                ),
+                padding_to_max=True,
+                padding_value='',
+                type='RandomLoadText'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'flip',
+                    'flip_direction',
+                    'texts',
+                ),
+                type='mmdet.PackDetInputs'),
+        ],
+        type='mmdet.PipelineSwitchHook'),
+]
+custom_imports = dict(
+    allow_failed_imports=False, imports=[
+        'wedetect',
+    ])
+default_hooks = dict(
+    checkpoint=dict(
+        interval=1,
+        max_keep_ckpts=3,
+        save_best='coco/bbox_mAP',
+        type='CheckpointHook'),
+    logger=dict(interval=50, type='LoggerHook'),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    timer=dict(type='IterTimerHook'),
+    visualization=dict(type='mmdet.DetVisualizationHook'))
+default_scope = 'mmdet'
+dist_cfg = dict(backend='nccl', timeout=10800)
+env_cfg = dict(
+    cudnn_benchmark=False,
+    dist_cfg=dict(backend='nccl'),
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0))
+find_unused_parameters = True
+img_scale = (
+    640,
+    640,
+)
+launcher = 'pytorch'
+load_from = 'work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth'
+log_level = 'INFO'
+log_processor = dict(by_epoch=True, type='LogProcessor', window_size=50)
+loss_bbox_weight = 7.5
+loss_cls_weight = 0.5
+loss_dfl_weight = 0.375
+lvis_minival_dataset = dict(
+    class_text_path='data/texts/lvis_v1_zh_class_texts.json',
+    dataset=dict(
+        ann_file='data/lvis/lvis_v1_minival_inserted_image_name.json',
+        batch_shapes_cfg=None,
+        data_prefix=dict(img=''),
+        data_root='data/coco/',
+        test_mode=True,
+        type='YOLOv5LVISV1Dataset'),
+    pipeline=[
+        dict(backend_args=None, type='LoadImageFromFile'),
+        dict(scale=(
+            640,
+            640,
+        ), type='WeDetectKeepRatioResize'),
+        dict(
+            allow_scale_up=False,
+            pad_val=dict(img=114),
+            scale=(
+                640,
+                640,
+            ),
+            type='WeDetectLetterResize'),
+        dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+        dict(type='LoadText'),
+        dict(
+            meta_keys=(
+                'img_id',
+                'img_path',
+                'ori_shape',
+                'img_shape',
+                'scale_factor',
+                'pad_param',
+                'texts',
+            ),
+            type='PackDetInputs'),
+    ],
+    type='MultiModalDataset')
+lvis_minival_evaluator = dict(
+    ann_file='data/lvis/lvis_v1_minival_inserted_image_name.json',
+    metric='bbox',
+    type='LVISMetric')
+lvis_od_val_dataset = dict(
+    class_text_path='data/texts/lvis_v1_zh_class_texts.json',
+    dataset=dict(
+        ann_file='data/lvis/lvis_od_val.json',
+        batch_shapes_cfg=None,
+        data_prefix=dict(img=''),
+        data_root='data/coco/',
+        test_mode=True,
+        type='YOLOv5LVISV1Dataset'),
+    pipeline=[
+        dict(backend_args=None, type='LoadImageFromFile'),
+        dict(scale=(
+            640,
+            640,
+        ), type='WeDetectKeepRatioResize'),
+        dict(
+            allow_scale_up=False,
+            pad_val=dict(img=114),
+            scale=(
+                640,
+                640,
+            ),
+            type='WeDetectLetterResize'),
+        dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+        dict(type='LoadText'),
+        dict(
+            meta_keys=(
+                'img_id',
+                'img_path',
+                'ori_shape',
+                'img_shape',
+                'scale_factor',
+                'pad_param',
+                'texts',
+            ),
+            type='PackDetInputs'),
+    ],
+    type='MultiModalDataset')
+lvis_od_val_evaluator = dict(
+    ann_file='data/lvis/lvis_od_val.json', metric='bbox', type='LVISMetric')
+max_epochs = 12
+metainfo = dict(
+    classes=(
+        'abnormal oral epithelial cell',
+        'alveolar bone loss',
+        'anterior teeth with fluorosis',
+        'anterior teeth without fluorosis',
+        'blood cell',
+        'canine',
+        'central incisor',
+        'craniofacial or oral anomaly',
+        'deep dental caries',
+        'dental abrasion',
+        'dental caries',
+        'dental crown restoration',
+        'dental filling',
+        'dental implant',
+        'dental opacity',
+        'dental restoration',
+        'dividing oral cell',
+        'first molar',
+        'first premolar',
+        'foreign object or debris',
+        'grade I oral cytology (normal)',
+        'grade II oral cytology (atypical)',
+        'grade III oral cytology (suspicious)',
+        'grade IV oral cytology (malignant)',
+        'impacted tooth',
+        'impacted wisdom tooth',
+        'intraoral appliance',
+        'lateral incisor',
+        'malaligned tooth',
+        'mandibular canal',
+        'maxillary sinus',
+        'missing or residual root',
+        'missing teeth',
+        'normal oral mucosa',
+        'normal oral tissue',
+        'oral squamous cell carcinoma tumor',
+        'orthodontic bracket',
+        'out-of-focus cell',
+        'periapical abscess',
+        'periapical cyst',
+        'periapical granuloma',
+        'periapical lesion',
+        'quadrant 1 (upper right)',
+        'quadrant 2 (upper left)',
+        'quadrant 3 (lower left)',
+        'quadrant 4 (lower right)',
+        'reactive oral cell',
+        'restoration with secondary caries',
+        'retained root',
+        'root canal treatment',
+        'root piece',
+        'second molar',
+        'second premolar',
+        'severe gingivitis',
+        'tooth',
+        'tooth 11 (upper right central incisor)',
+        'tooth 12 (upper right lateral incisor)',
+        'tooth 13 (upper right canine)',
+        'tooth 14 (upper right first premolar)',
+        'tooth 15 (upper right second premolar)',
+        'tooth 16 (upper right first molar)',
+        'tooth 17 (upper right second molar)',
+        'tooth 18 (upper right third molar)',
+        'tooth 21 (upper left central incisor)',
+        'tooth 22 (upper left lateral incisor)',
+        'tooth 23 (upper left canine)',
+        'tooth 24 (upper left first premolar)',
+        'tooth 25 (upper left second premolar)',
+        'tooth 26 (upper left first molar)',
+        'tooth 27 (upper left second molar)',
+        'tooth 28 (upper left third molar)',
+        'tooth 31 (lower left central incisor)',
+        'tooth 32 (lower left lateral incisor)',
+        'tooth 33 (lower left canine)',
+        'tooth 34 (lower left first premolar)',
+        'tooth 35 (lower left second premolar)',
+        'tooth 36 (lower left first molar)',
+        'tooth 37 (lower left second molar)',
+        'tooth 38 (lower left third molar)',
+        'tooth 41 (lower right central incisor)',
+        'tooth 42 (lower right lateral incisor)',
+        'tooth 43 (lower right canine)',
+        'tooth 44 (lower right first premolar)',
+        'tooth 45 (lower right second premolar)',
+        'tooth 46 (lower right first molar)',
+        'tooth 47 (lower right second molar)',
+        'tooth 48 (lower right third molar)',
+        'tooth erosion',
+        'tooth malformation',
+        'treated tooth',
+        'unclassified cell',
+    ))
+mixup_prob = 0.15
+model = dict(
+    backbone=dict(
+        image_model=dict(
+            frozen_modules=[],
+            model_name='base',
+            type='ConvNextVisionBackbone'),
+        text_model=dict(
+            frozen_modules=[],
+            model_name='./xlm-roberta-base/',
+            model_size='base',
+            type='XLMRobertaLanguageBackbone'),
+        type='MultiModalYOLOBackbone'),
+    bbox_head=dict(
+        bbox_coder=dict(type='WeDetectDistancePointBBoxCoder'),
+        head_module=dict(
+            embed_dims=768,
+            in_channels=[
+                256,
+                512,
+                1024,
+            ],
+            model_size='base',
+            num_classes=91,
+            type='YOLOWorldHeadModule',
+            use_bn_head=True),
+        loss_bbox=dict(
+            bbox_format='xyxy',
+            iou_mode='ciou',
+            loss_weight=7.5,
+            reduction='sum',
+            return_iou=False,
+            type='mmyoloIoULoss'),
+        loss_cls=dict(
+            loss_weight=0.5,
+            reduction='none',
+            type='CrossEntropyLoss',
+            use_sigmoid=True),
+        loss_dfl=dict(
+            loss_weight=0.375, reduction='mean', type='DistributionFocalLoss'),
+        prior_generator=dict(
+            offset=0.5, strides=[
+                8,
+                16,
+                32,
+            ], type='MlvlPointGenerator'),
+        type='YOLOWorldHead'),
+    data_preprocessor=dict(
+        bgr_to_rgb=True,
+        mean=[
+            0.0,
+            0.0,
+            0.0,
+        ],
+        std=[
+            255.0,
+            255.0,
+            255.0,
+        ],
+        type='YOLOWDetDataPreprocessor'),
+    mm_neck=False,
+    neck=dict(model_size='base', scale_factor=1.0, type='CSPRepBiFPANNeck'),
+    num_test_classes=91,
+    num_train_classes=91,
+    test_cfg=dict(
+        max_per_img=300,
+        multi_label=True,
+        nms=dict(iou_threshold=0.7, type='nms'),
+        nms_pre=30000,
+        score_thr=0.001),
+    train_cfg=dict(
+        assigner=dict(
+            alpha=0.5,
+            beta=6.0,
+            eps=1e-09,
+            num_classes=91,
+            topk=10,
+            type='BatchTaskAlignedAssigner',
+            use_ciou=True)),
+    type='YOLOWorldDetector')
+model_test_cfg = dict(
+    max_per_img=300,
+    multi_label=True,
+    nms=dict(iou_threshold=0.7, type='nms'),
+    nms_pre=30000,
+    score_thr=0.001)
+mosaic_affine_transform = [
+    dict(
+        img_scale=(
+            640,
+            640,
+        ),
+        pad_val=114.0,
+        pre_transform=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+        ],
+        type='MultiModalMosaic'),
+    dict(
+        border=(
+            -320,
+            -320,
+        ),
+        border_val=(
+            114,
+            114,
+            114,
+        ),
+        max_aspect_ratio=100.0,
+        max_rotate_degree=0.0,
+        max_shear_degree=0.0,
+        scaling_ratio_range=(
+            0.5,
+            1.5,
+        ),
+        type='WeDetectRandomAffine'),
+]
+neck_embed_channels = [
+    128,
+    256,
+    512,
+]
+neck_num_heads = [
+    4,
+    8,
+    16,
+]
+num_classes = 91
+num_training_classes = 91
+optim_wrapper = dict(
+    clip_grad=dict(max_norm=10.0),
+    constructor='YOLOWv5OptimizerConstructor',
+    optimizer=dict(
+        batch_size_per_gpu=8, lr=2e-05, type='AdamW', weight_decay=0.05),
+    paramwise_cfg=dict(
+        custom_keys=dict({
+            'backbone.text_model': dict(lr_mult=0.01),
+            'logit_scale': dict(weight_decay=0.0)
+        })),
+    type='OptimWrapper')
+param_scheduler = [
+    dict(
+        begin=0,
+        by_epoch=False,
+        end=1000,
+        end_factor=1.0,
+        start_factor=0.001,
+        type='LinearLR'),
+    dict(
+        begin=0,
+        by_epoch=True,
+        convert_to_iter_based=True,
+        end=12,
+        end_factor=0.001,
+        start_factor=1.0,
+        type='LinearLR'),
+]
+persistent_workers = True
+pre_transform = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+]
+resume = False
+save_epoch_intervals = 1
+tal_alpha = 0.5
+tal_beta = 6.0
+tal_topk = 10
+test_cfg = dict(type='TestLoop')
+test_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        class_text_path=
+        '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json',
+        dataset=dict(
+            ann_file=
+            '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json',
+            batch_shapes_cfg=None,
+            data_prefix=dict(img='all2017/'),
+            data_root=
+            '/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/',
+            metainfo=dict(
+                classes=(
+                    'abnormal oral epithelial cell',
+                    'alveolar bone loss',
+                    'anterior teeth with fluorosis',
+                    'anterior teeth without fluorosis',
+                    'blood cell',
+                    'canine',
+                    'central incisor',
+                    'craniofacial or oral anomaly',
+                    'deep dental caries',
+                    'dental abrasion',
+                    'dental caries',
+                    'dental crown restoration',
+                    'dental filling',
+                    'dental implant',
+                    'dental opacity',
+                    'dental restoration',
+                    'dividing oral cell',
+                    'first molar',
+                    'first premolar',
+                    'foreign object or debris',
+                    'grade I oral cytology (normal)',
+                    'grade II oral cytology (atypical)',
+                    'grade III oral cytology (suspicious)',
+                    'grade IV oral cytology (malignant)',
+                    'impacted tooth',
+                    'impacted wisdom tooth',
+                    'intraoral appliance',
+                    'lateral incisor',
+                    'malaligned tooth',
+                    'mandibular canal',
+                    'maxillary sinus',
+                    'missing or residual root',
+                    'missing teeth',
+                    'normal oral mucosa',
+                    'normal oral tissue',
+                    'oral squamous cell carcinoma tumor',
+                    'orthodontic bracket',
+                    'out-of-focus cell',
+                    'periapical abscess',
+                    'periapical cyst',
+                    'periapical granuloma',
+                    'periapical lesion',
+                    'quadrant 1 (upper right)',
+                    'quadrant 2 (upper left)',
+                    'quadrant 3 (lower left)',
+                    'quadrant 4 (lower right)',
+                    'reactive oral cell',
+                    'restoration with secondary caries',
+                    'retained root',
+                    'root canal treatment',
+                    'root piece',
+                    'second molar',
+                    'second premolar',
+                    'severe gingivitis',
+                    'tooth',
+                    'tooth 11 (upper right central incisor)',
+                    'tooth 12 (upper right lateral incisor)',
+                    'tooth 13 (upper right canine)',
+                    'tooth 14 (upper right first premolar)',
+                    'tooth 15 (upper right second premolar)',
+                    'tooth 16 (upper right first molar)',
+                    'tooth 17 (upper right second molar)',
+                    'tooth 18 (upper right third molar)',
+                    'tooth 21 (upper left central incisor)',
+                    'tooth 22 (upper left lateral incisor)',
+                    'tooth 23 (upper left canine)',
+                    'tooth 24 (upper left first premolar)',
+                    'tooth 25 (upper left second premolar)',
+                    'tooth 26 (upper left first molar)',
+                    'tooth 27 (upper left second molar)',
+                    'tooth 28 (upper left third molar)',
+                    'tooth 31 (lower left central incisor)',
+                    'tooth 32 (lower left lateral incisor)',
+                    'tooth 33 (lower left canine)',
+                    'tooth 34 (lower left first premolar)',
+                    'tooth 35 (lower left second premolar)',
+                    'tooth 36 (lower left first molar)',
+                    'tooth 37 (lower left second molar)',
+                    'tooth 38 (lower left third molar)',
+                    'tooth 41 (lower right central incisor)',
+                    'tooth 42 (lower right lateral incisor)',
+                    'tooth 43 (lower right canine)',
+                    'tooth 44 (lower right first premolar)',
+                    'tooth 45 (lower right second premolar)',
+                    'tooth 46 (lower right first molar)',
+                    'tooth 47 (lower right second molar)',
+                    'tooth 48 (lower right third molar)',
+                    'tooth erosion',
+                    'tooth malformation',
+                    'treated tooth',
+                    'unclassified cell',
+                )),
+            test_mode=True,
+            type='WeCocoDataset'),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(scale=(
+                640,
+                640,
+            ), type='WeDetectKeepRatioResize'),
+            dict(
+                allow_scale_up=False,
+                pad_val=dict(img=114),
+                scale=(
+                    640,
+                    640,
+                ),
+                type='WeDetectLetterResize'),
+            dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+            dict(type='LoadText'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                    'pad_param',
+                    'texts',
+                ),
+                type='PackDetInputs'),
+        ],
+        type='MultiModalDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    pin_memory=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+test_evaluator = dict(
+    ann_file=
+    '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json',
+    metric='bbox',
+    outfile_prefix='work_dirs/base3stage_s3/preds_base3stage',
+    type='CocoMetric')
+test_pipeline = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(scale=(
+        640,
+        640,
+    ), type='WeDetectKeepRatioResize'),
+    dict(
+        allow_scale_up=False,
+        pad_val=dict(img=114),
+        scale=(
+            640,
+            640,
+        ),
+        type='WeDetectLetterResize'),
+    dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+    dict(type='LoadText'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'scale_factor',
+            'pad_param',
+            'texts',
+        ),
+        type='PackDetInputs'),
+]
+text_channels = 768
+text_transform = [
+    dict(
+        max_num_samples=91,
+        num_neg_samples=(
+            91,
+            91,
+        ),
+        padding_to_max=True,
+        padding_value='',
+        type='RandomLoadText'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'flip',
+            'flip_direction',
+            'texts',
+        ),
+        type='mmdet.PackDetInputs'),
+]
+train_batch_size_per_gpu = 8
+train_cfg = dict(
+    dynamic_intervals=[
+        (
+            8,
+            1,
+        ),
+    ],
+    max_epochs=12,
+    type='EpochBasedTrainLoop',
+    val_interval=2)
+train_dataloader = dict(
+    batch_size=8,
+    collate_fn=dict(type='yolow_collate'),
+    dataset=dict(
+        class_text_path=
+        '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json',
+        dataset=dict(
+            ann_file=
+            '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_train.json',
+            data_prefix=dict(img='all2017/'),
+            data_root=
+            '/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/',
+            filter_cfg=dict(filter_empty_gt=False, min_size=32),
+            metainfo=dict(
+                classes=(
+                    'abnormal oral epithelial cell',
+                    'alveolar bone loss',
+                    'anterior teeth with fluorosis',
+                    'anterior teeth without fluorosis',
+                    'blood cell',
+                    'canine',
+                    'central incisor',
+                    'craniofacial or oral anomaly',
+                    'deep dental caries',
+                    'dental abrasion',
+                    'dental caries',
+                    'dental crown restoration',
+                    'dental filling',
+                    'dental implant',
+                    'dental opacity',
+                    'dental restoration',
+                    'dividing oral cell',
+                    'first molar',
+                    'first premolar',
+                    'foreign object or debris',
+                    'grade I oral cytology (normal)',
+                    'grade II oral cytology (atypical)',
+                    'grade III oral cytology (suspicious)',
+                    'grade IV oral cytology (malignant)',
+                    'impacted tooth',
+                    'impacted wisdom tooth',
+                    'intraoral appliance',
+                    'lateral incisor',
+                    'malaligned tooth',
+                    'mandibular canal',
+                    'maxillary sinus',
+                    'missing or residual root',
+                    'missing teeth',
+                    'normal oral mucosa',
+                    'normal oral tissue',
+                    'oral squamous cell carcinoma tumor',
+                    'orthodontic bracket',
+                    'out-of-focus cell',
+                    'periapical abscess',
+                    'periapical cyst',
+                    'periapical granuloma',
+                    'periapical lesion',
+                    'quadrant 1 (upper right)',
+                    'quadrant 2 (upper left)',
+                    'quadrant 3 (lower left)',
+                    'quadrant 4 (lower right)',
+                    'reactive oral cell',
+                    'restoration with secondary caries',
+                    'retained root',
+                    'root canal treatment',
+                    'root piece',
+                    'second molar',
+                    'second premolar',
+                    'severe gingivitis',
+                    'tooth',
+                    'tooth 11 (upper right central incisor)',
+                    'tooth 12 (upper right lateral incisor)',
+                    'tooth 13 (upper right canine)',
+                    'tooth 14 (upper right first premolar)',
+                    'tooth 15 (upper right second premolar)',
+                    'tooth 16 (upper right first molar)',
+                    'tooth 17 (upper right second molar)',
+                    'tooth 18 (upper right third molar)',
+                    'tooth 21 (upper left central incisor)',
+                    'tooth 22 (upper left lateral incisor)',
+                    'tooth 23 (upper left canine)',
+                    'tooth 24 (upper left first premolar)',
+                    'tooth 25 (upper left second premolar)',
+                    'tooth 26 (upper left first molar)',
+                    'tooth 27 (upper left second molar)',
+                    'tooth 28 (upper left third molar)',
+                    'tooth 31 (lower left central incisor)',
+                    'tooth 32 (lower left lateral incisor)',
+                    'tooth 33 (lower left canine)',
+                    'tooth 34 (lower left first premolar)',
+                    'tooth 35 (lower left second premolar)',
+                    'tooth 36 (lower left first molar)',
+                    'tooth 37 (lower left second molar)',
+                    'tooth 38 (lower left third molar)',
+                    'tooth 41 (lower right central incisor)',
+                    'tooth 42 (lower right lateral incisor)',
+                    'tooth 43 (lower right canine)',
+                    'tooth 44 (lower right first premolar)',
+                    'tooth 45 (lower right second premolar)',
+                    'tooth 46 (lower right first molar)',
+                    'tooth 47 (lower right second molar)',
+                    'tooth 48 (lower right third molar)',
+                    'tooth erosion',
+                    'tooth malformation',
+                    'treated tooth',
+                    'unclassified cell',
+                )),
+            type='WeCocoDataset'),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                img_scale=(
+                    640,
+                    640,
+                ),
+                pad_val=114.0,
+                pre_transform=[
+                    dict(backend_args=None, type='LoadImageFromFile'),
+                    dict(type='LoadAnnotations', with_bbox=True),
+                ],
+                type='MultiModalMosaic'),
+            dict(
+                border=(
+                    -320,
+                    -320,
+                ),
+                border_val=(
+                    114,
+                    114,
+                    114,
+                ),
+                max_aspect_ratio=100.0,
+                max_rotate_degree=0.0,
+                max_shear_degree=0.0,
+                scaling_ratio_range=(
+                    0.5,
+                    1.5,
+                ),
+                type='WeDetectRandomAffine'),
+            dict(
+                pre_transform=[
+                    dict(backend_args=None, type='LoadImageFromFile'),
+                    dict(type='LoadAnnotations', with_bbox=True),
+                    dict(
+                        img_scale=(
+                            640,
+                            640,
+                        ),
+                        pad_val=114.0,
+                        pre_transform=[
+                            dict(backend_args=None, type='LoadImageFromFile'),
+                            dict(type='LoadAnnotations', with_bbox=True),
+                        ],
+                        type='MultiModalMosaic'),
+                    dict(
+                        border=(
+                            -320,
+                            -320,
+                        ),
+                        border_val=(
+                            114,
+                            114,
+                            114,
+                        ),
+                        max_aspect_ratio=100.0,
+                        max_rotate_degree=0.0,
+                        max_shear_degree=0.0,
+                        scaling_ratio_range=(
+                            0.5,
+                            1.5,
+                        ),
+                        type='WeDetectRandomAffine'),
+                ],
+                prob=0.15,
+                type='YOLOv5MultiModalMixUp'),
+            dict(
+                bbox_params=dict(
+                    format='pascal_voc',
+                    label_fields=[
+                        'gt_bboxes_labels',
+                        'gt_ignore_flags',
+                    ],
+                    type='BboxParams'),
+                keymap=dict(gt_bboxes='bboxes', img='image'),
+                transforms=[
+                    dict(p=0.01, type='Blur'),
+                    dict(p=0.01, type='MedianBlur'),
+                    dict(p=0.01, type='ToGray'),
+                    dict(p=0.01, type='CLAHE'),
+                ],
+                type='mmdet.Albu'),
+            dict(type='WeDetectHSVRandomAug'),
+            dict(prob=0.5, type='mmdet.RandomFlip'),
+            dict(
+                max_num_samples=91,
+                num_neg_samples=(
+                    91,
+                    91,
+                ),
+                padding_to_max=True,
+                padding_value='',
+                type='RandomLoadText'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'flip',
+                    'flip_direction',
+                    'texts',
+                ),
+                type='mmdet.PackDetInputs'),
+        ],
+        type='MultiModalDataset'),
+    num_workers=4,
+    persistent_workers=True,
+    sampler=dict(shuffle=True, type='DefaultSampler'))
+train_dataset = dict(
+    class_text_path=
+    '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json',
+    dataset=dict(
+        ann_file=
+        '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_train.json',
+        data_prefix=dict(img='all2017/'),
+        data_root='/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/',
+        filter_cfg=dict(filter_empty_gt=False, min_size=32),
+        metainfo=dict(
+            classes=(
+                'abnormal oral epithelial cell',
+                'alveolar bone loss',
+                'anterior teeth with fluorosis',
+                'anterior teeth without fluorosis',
+                'blood cell',
+                'canine',
+                'central incisor',
+                'craniofacial or oral anomaly',
+                'deep dental caries',
+                'dental abrasion',
+                'dental caries',
+                'dental crown restoration',
+                'dental filling',
+                'dental implant',
+                'dental opacity',
+                'dental restoration',
+                'dividing oral cell',
+                'first molar',
+                'first premolar',
+                'foreign object or debris',
+                'grade I oral cytology (normal)',
+                'grade II oral cytology (atypical)',
+                'grade III oral cytology (suspicious)',
+                'grade IV oral cytology (malignant)',
+                'impacted tooth',
+                'impacted wisdom tooth',
+                'intraoral appliance',
+                'lateral incisor',
+                'malaligned tooth',
+                'mandibular canal',
+                'maxillary sinus',
+                'missing or residual root',
+                'missing teeth',
+                'normal oral mucosa',
+                'normal oral tissue',
+                'oral squamous cell carcinoma tumor',
+                'orthodontic bracket',
+                'out-of-focus cell',
+                'periapical abscess',
+                'periapical cyst',
+                'periapical granuloma',
+                'periapical lesion',
+                'quadrant 1 (upper right)',
+                'quadrant 2 (upper left)',
+                'quadrant 3 (lower left)',
+                'quadrant 4 (lower right)',
+                'reactive oral cell',
+                'restoration with secondary caries',
+                'retained root',
+                'root canal treatment',
+                'root piece',
+                'second molar',
+                'second premolar',
+                'severe gingivitis',
+                'tooth',
+                'tooth 11 (upper right central incisor)',
+                'tooth 12 (upper right lateral incisor)',
+                'tooth 13 (upper right canine)',
+                'tooth 14 (upper right first premolar)',
+                'tooth 15 (upper right second premolar)',
+                'tooth 16 (upper right first molar)',
+                'tooth 17 (upper right second molar)',
+                'tooth 18 (upper right third molar)',
+                'tooth 21 (upper left central incisor)',
+                'tooth 22 (upper left lateral incisor)',
+                'tooth 23 (upper left canine)',
+                'tooth 24 (upper left first premolar)',
+                'tooth 25 (upper left second premolar)',
+                'tooth 26 (upper left first molar)',
+                'tooth 27 (upper left second molar)',
+                'tooth 28 (upper left third molar)',
+                'tooth 31 (lower left central incisor)',
+                'tooth 32 (lower left lateral incisor)',
+                'tooth 33 (lower left canine)',
+                'tooth 34 (lower left first premolar)',
+                'tooth 35 (lower left second premolar)',
+                'tooth 36 (lower left first molar)',
+                'tooth 37 (lower left second molar)',
+                'tooth 38 (lower left third molar)',
+                'tooth 41 (lower right central incisor)',
+                'tooth 42 (lower right lateral incisor)',
+                'tooth 43 (lower right canine)',
+                'tooth 44 (lower right first premolar)',
+                'tooth 45 (lower right second premolar)',
+                'tooth 46 (lower right first molar)',
+                'tooth 47 (lower right second molar)',
+                'tooth 48 (lower right third molar)',
+                'tooth erosion',
+                'tooth malformation',
+                'treated tooth',
+                'unclassified cell',
+            )),
+        type='WeCocoDataset'),
+    pipeline=[
+        dict(backend_args=None, type='LoadImageFromFile'),
+        dict(type='LoadAnnotations', with_bbox=True),
+        dict(
+            img_scale=(
+                640,
+                640,
+            ),
+            pad_val=114.0,
+            pre_transform=[
+                dict(backend_args=None, type='LoadImageFromFile'),
+                dict(type='LoadAnnotations', with_bbox=True),
+            ],
+            type='MultiModalMosaic'),
+        dict(
+            border=(
+                -320,
+                -320,
+            ),
+            border_val=(
+                114,
+                114,
+                114,
+            ),
+            max_aspect_ratio=100.0,
+            max_rotate_degree=0.0,
+            max_shear_degree=0.0,
+            scaling_ratio_range=(
+                0.5,
+                1.5,
+            ),
+            type='WeDetectRandomAffine'),
+        dict(
+            pre_transform=[
+                dict(backend_args=None, type='LoadImageFromFile'),
+                dict(type='LoadAnnotations', with_bbox=True),
+                dict(
+                    img_scale=(
+                        640,
+                        640,
+                    ),
+                    pad_val=114.0,
+                    pre_transform=[
+                        dict(backend_args=None, type='LoadImageFromFile'),
+                        dict(type='LoadAnnotations', with_bbox=True),
+                    ],
+                    type='MultiModalMosaic'),
+                dict(
+                    border=(
+                        -320,
+                        -320,
+                    ),
+                    border_val=(
+                        114,
+                        114,
+                        114,
+                    ),
+                    max_aspect_ratio=100.0,
+                    max_rotate_degree=0.0,
+                    max_shear_degree=0.0,
+                    scaling_ratio_range=(
+                        0.5,
+                        1.5,
+                    ),
+                    type='WeDetectRandomAffine'),
+            ],
+            prob=0.15,
+            type='YOLOv5MultiModalMixUp'),
+        dict(
+            bbox_params=dict(
+                format='pascal_voc',
+                label_fields=[
+                    'gt_bboxes_labels',
+                    'gt_ignore_flags',
+                ],
+                type='BboxParams'),
+            keymap=dict(gt_bboxes='bboxes', img='image'),
+            transforms=[
+                dict(p=0.01, type='Blur'),
+                dict(p=0.01, type='MedianBlur'),
+                dict(p=0.01, type='ToGray'),
+                dict(p=0.01, type='CLAHE'),
+            ],
+            type='mmdet.Albu'),
+        dict(type='WeDetectHSVRandomAug'),
+        dict(prob=0.5, type='mmdet.RandomFlip'),
+        dict(
+            max_num_samples=91,
+            num_neg_samples=(
+                91,
+                91,
+            ),
+            padding_to_max=True,
+            padding_value='',
+            type='RandomLoadText'),
+        dict(
+            meta_keys=(
+                'img_id',
+                'img_path',
+                'ori_shape',
+                'img_shape',
+                'flip',
+                'flip_direction',
+                'texts',
+            ),
+            type='mmdet.PackDetInputs'),
+    ],
+    type='MultiModalDataset')
+train_pipeline = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(
+        img_scale=(
+            640,
+            640,
+        ),
+        pad_val=114.0,
+        pre_transform=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+        ],
+        type='MultiModalMosaic'),
+    dict(
+        border=(
+            -320,
+            -320,
+        ),
+        border_val=(
+            114,
+            114,
+            114,
+        ),
+        max_aspect_ratio=100.0,
+        max_rotate_degree=0.0,
+        max_shear_degree=0.0,
+        scaling_ratio_range=(
+            0.5,
+            1.5,
+        ),
+        type='WeDetectRandomAffine'),
+    dict(
+        pre_transform=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                img_scale=(
+                    640,
+                    640,
+                ),
+                pad_val=114.0,
+                pre_transform=[
+                    dict(backend_args=None, type='LoadImageFromFile'),
+                    dict(type='LoadAnnotations', with_bbox=True),
+                ],
+                type='MultiModalMosaic'),
+            dict(
+                border=(
+                    -320,
+                    -320,
+                ),
+                border_val=(
+                    114,
+                    114,
+                    114,
+                ),
+                max_aspect_ratio=100.0,
+                max_rotate_degree=0.0,
+                max_shear_degree=0.0,
+                scaling_ratio_range=(
+                    0.5,
+                    1.5,
+                ),
+                type='WeDetectRandomAffine'),
+        ],
+        prob=0.15,
+        type='YOLOv5MultiModalMixUp'),
+    dict(
+        bbox_params=dict(
+            format='pascal_voc',
+            label_fields=[
+                'gt_bboxes_labels',
+                'gt_ignore_flags',
+            ],
+            type='BboxParams'),
+        keymap=dict(gt_bboxes='bboxes', img='image'),
+        transforms=[
+            dict(p=0.01, type='Blur'),
+            dict(p=0.01, type='MedianBlur'),
+            dict(p=0.01, type='ToGray'),
+            dict(p=0.01, type='CLAHE'),
+        ],
+        type='mmdet.Albu'),
+    dict(type='WeDetectHSVRandomAug'),
+    dict(prob=0.5, type='mmdet.RandomFlip'),
+    dict(
+        max_num_samples=91,
+        num_neg_samples=(
+            91,
+            91,
+        ),
+        padding_to_max=True,
+        padding_value='',
+        type='RandomLoadText'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'flip',
+            'flip_direction',
+            'texts',
+        ),
+        type='mmdet.PackDetInputs'),
+]
+train_pipeline_stage2 = [
+    dict(backend_args=None, type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(scale=(
+        640,
+        640,
+    ), type='WeDetectKeepRatioResize'),
+    dict(
+        allow_scale_up=True,
+        pad_val=dict(img=114.0),
+        scale=(
+            640,
+            640,
+        ),
+        type='WeDetectLetterResize'),
+    dict(
+        border_val=(
+            114,
+            114,
+            114,
+        ),
+        max_aspect_ratio=100,
+        max_rotate_degree=0.0,
+        max_shear_degree=0.0,
+        scaling_ratio_range=(
+            0.5,
+            1.5,
+        ),
+        type='WeDetectRandomAffine'),
+    dict(
+        bbox_params=dict(
+            format='pascal_voc',
+            label_fields=[
+                'gt_bboxes_labels',
+                'gt_ignore_flags',
+            ],
+            type='BboxParams'),
+        keymap=dict(gt_bboxes='bboxes', img='image'),
+        transforms=[
+            dict(p=0.01, type='Blur'),
+            dict(p=0.01, type='MedianBlur'),
+            dict(p=0.01, type='ToGray'),
+            dict(p=0.01, type='CLAHE'),
+        ],
+        type='mmdet.Albu'),
+    dict(type='WeDetectHSVRandomAug'),
+    dict(prob=0.5, type='mmdet.RandomFlip'),
+    dict(
+        max_num_samples=91,
+        num_neg_samples=(
+            91,
+            91,
+        ),
+        padding_to_max=True,
+        padding_value='',
+        type='RandomLoadText'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'flip',
+            'flip_direction',
+            'texts',
+        ),
+        type='mmdet.PackDetInputs'),
+]
+val_cfg = dict(type='ValLoop')
+val_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        class_text_path=
+        '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json',
+        dataset=dict(
+            ann_file=
+            '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json',
+            batch_shapes_cfg=None,
+            data_prefix=dict(img='all2017/'),
+            data_root=
+            '/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/',
+            metainfo=dict(
+                classes=(
+                    'abnormal oral epithelial cell',
+                    'alveolar bone loss',
+                    'anterior teeth with fluorosis',
+                    'anterior teeth without fluorosis',
+                    'blood cell',
+                    'canine',
+                    'central incisor',
+                    'craniofacial or oral anomaly',
+                    'deep dental caries',
+                    'dental abrasion',
+                    'dental caries',
+                    'dental crown restoration',
+                    'dental filling',
+                    'dental implant',
+                    'dental opacity',
+                    'dental restoration',
+                    'dividing oral cell',
+                    'first molar',
+                    'first premolar',
+                    'foreign object or debris',
+                    'grade I oral cytology (normal)',
+                    'grade II oral cytology (atypical)',
+                    'grade III oral cytology (suspicious)',
+                    'grade IV oral cytology (malignant)',
+                    'impacted tooth',
+                    'impacted wisdom tooth',
+                    'intraoral appliance',
+                    'lateral incisor',
+                    'malaligned tooth',
+                    'mandibular canal',
+                    'maxillary sinus',
+                    'missing or residual root',
+                    'missing teeth',
+                    'normal oral mucosa',
+                    'normal oral tissue',
+                    'oral squamous cell carcinoma tumor',
+                    'orthodontic bracket',
+                    'out-of-focus cell',
+                    'periapical abscess',
+                    'periapical cyst',
+                    'periapical granuloma',
+                    'periapical lesion',
+                    'quadrant 1 (upper right)',
+                    'quadrant 2 (upper left)',
+                    'quadrant 3 (lower left)',
+                    'quadrant 4 (lower right)',
+                    'reactive oral cell',
+                    'restoration with secondary caries',
+                    'retained root',
+                    'root canal treatment',
+                    'root piece',
+                    'second molar',
+                    'second premolar',
+                    'severe gingivitis',
+                    'tooth',
+                    'tooth 11 (upper right central incisor)',
+                    'tooth 12 (upper right lateral incisor)',
+                    'tooth 13 (upper right canine)',
+                    'tooth 14 (upper right first premolar)',
+                    'tooth 15 (upper right second premolar)',
+                    'tooth 16 (upper right first molar)',
+                    'tooth 17 (upper right second molar)',
+                    'tooth 18 (upper right third molar)',
+                    'tooth 21 (upper left central incisor)',
+                    'tooth 22 (upper left lateral incisor)',
+                    'tooth 23 (upper left canine)',
+                    'tooth 24 (upper left first premolar)',
+                    'tooth 25 (upper left second premolar)',
+                    'tooth 26 (upper left first molar)',
+                    'tooth 27 (upper left second molar)',
+                    'tooth 28 (upper left third molar)',
+                    'tooth 31 (lower left central incisor)',
+                    'tooth 32 (lower left lateral incisor)',
+                    'tooth 33 (lower left canine)',
+                    'tooth 34 (lower left first premolar)',
+                    'tooth 35 (lower left second premolar)',
+                    'tooth 36 (lower left first molar)',
+                    'tooth 37 (lower left second molar)',
+                    'tooth 38 (lower left third molar)',
+                    'tooth 41 (lower right central incisor)',
+                    'tooth 42 (lower right lateral incisor)',
+                    'tooth 43 (lower right canine)',
+                    'tooth 44 (lower right first premolar)',
+                    'tooth 45 (lower right second premolar)',
+                    'tooth 46 (lower right first molar)',
+                    'tooth 47 (lower right second molar)',
+                    'tooth 48 (lower right third molar)',
+                    'tooth erosion',
+                    'tooth malformation',
+                    'treated tooth',
+                    'unclassified cell',
+                )),
+            test_mode=True,
+            type='WeCocoDataset'),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(scale=(
+                640,
+                640,
+            ), type='WeDetectKeepRatioResize'),
+            dict(
+                allow_scale_up=False,
+                pad_val=dict(img=114),
+                scale=(
+                    640,
+                    640,
+                ),
+                type='WeDetectLetterResize'),
+            dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+            dict(type='LoadText'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                    'pad_param',
+                    'texts',
+                ),
+                type='PackDetInputs'),
+        ],
+        type='MultiModalDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    pin_memory=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+val_dataset = dict(
+    class_text_path=
+    '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/class_texts_en.json',
+    dataset=dict(
+        ann_file=
+        '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json',
+        batch_shapes_cfg=None,
+        data_prefix=dict(img='all2017/'),
+        data_root='/nfs_share/public/OralGPT/oralgpt-detect-all/coco_format/',
+        metainfo=dict(
+            classes=(
+                'abnormal oral epithelial cell',
+                'alveolar bone loss',
+                'anterior teeth with fluorosis',
+                'anterior teeth without fluorosis',
+                'blood cell',
+                'canine',
+                'central incisor',
+                'craniofacial or oral anomaly',
+                'deep dental caries',
+                'dental abrasion',
+                'dental caries',
+                'dental crown restoration',
+                'dental filling',
+                'dental implant',
+                'dental opacity',
+                'dental restoration',
+                'dividing oral cell',
+                'first molar',
+                'first premolar',
+                'foreign object or debris',
+                'grade I oral cytology (normal)',
+                'grade II oral cytology (atypical)',
+                'grade III oral cytology (suspicious)',
+                'grade IV oral cytology (malignant)',
+                'impacted tooth',
+                'impacted wisdom tooth',
+                'intraoral appliance',
+                'lateral incisor',
+                'malaligned tooth',
+                'mandibular canal',
+                'maxillary sinus',
+                'missing or residual root',
+                'missing teeth',
+                'normal oral mucosa',
+                'normal oral tissue',
+                'oral squamous cell carcinoma tumor',
+                'orthodontic bracket',
+                'out-of-focus cell',
+                'periapical abscess',
+                'periapical cyst',
+                'periapical granuloma',
+                'periapical lesion',
+                'quadrant 1 (upper right)',
+                'quadrant 2 (upper left)',
+                'quadrant 3 (lower left)',
+                'quadrant 4 (lower right)',
+                'reactive oral cell',
+                'restoration with secondary caries',
+                'retained root',
+                'root canal treatment',
+                'root piece',
+                'second molar',
+                'second premolar',
+                'severe gingivitis',
+                'tooth',
+                'tooth 11 (upper right central incisor)',
+                'tooth 12 (upper right lateral incisor)',
+                'tooth 13 (upper right canine)',
+                'tooth 14 (upper right first premolar)',
+                'tooth 15 (upper right second premolar)',
+                'tooth 16 (upper right first molar)',
+                'tooth 17 (upper right second molar)',
+                'tooth 18 (upper right third molar)',
+                'tooth 21 (upper left central incisor)',
+                'tooth 22 (upper left lateral incisor)',
+                'tooth 23 (upper left canine)',
+                'tooth 24 (upper left first premolar)',
+                'tooth 25 (upper left second premolar)',
+                'tooth 26 (upper left first molar)',
+                'tooth 27 (upper left second molar)',
+                'tooth 28 (upper left third molar)',
+                'tooth 31 (lower left central incisor)',
+                'tooth 32 (lower left lateral incisor)',
+                'tooth 33 (lower left canine)',
+                'tooth 34 (lower left first premolar)',
+                'tooth 35 (lower left second premolar)',
+                'tooth 36 (lower left first molar)',
+                'tooth 37 (lower left second molar)',
+                'tooth 38 (lower left third molar)',
+                'tooth 41 (lower right central incisor)',
+                'tooth 42 (lower right lateral incisor)',
+                'tooth 43 (lower right canine)',
+                'tooth 44 (lower right first premolar)',
+                'tooth 45 (lower right second premolar)',
+                'tooth 46 (lower right first molar)',
+                'tooth 47 (lower right second molar)',
+                'tooth 48 (lower right third molar)',
+                'tooth erosion',
+                'tooth malformation',
+                'treated tooth',
+                'unclassified cell',
+            )),
+        test_mode=True,
+        type='WeCocoDataset'),
+    pipeline=[
+        dict(backend_args=None, type='LoadImageFromFile'),
+        dict(scale=(
+            640,
+            640,
+        ), type='WeDetectKeepRatioResize'),
+        dict(
+            allow_scale_up=False,
+            pad_val=dict(img=114),
+            scale=(
+                640,
+                640,
+            ),
+            type='WeDetectLetterResize'),
+        dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+        dict(type='LoadText'),
+        dict(
+            meta_keys=(
+                'img_id',
+                'img_path',
+                'ori_shape',
+                'img_shape',
+                'scale_factor',
+                'pad_param',
+                'texts',
+            ),
+            type='PackDetInputs'),
+    ],
+    type='MultiModalDataset')
+val_evaluator = dict(
+    ann_file=
+    '/home/siyuan/projects/LLMs/OralDetect-Family/OralDetect/datas/instances_test.json',
+    metric='bbox',
+    type='CocoMetric')
+vis_backends = [
+    dict(type='LocalVisBackend'),
+]
+visualizer = dict(
+    name='visualizer',
+    type='mmdet.DetLocalVisualizer',
+    vis_backends=[
+        dict(type='LocalVisBackend'),
+    ])
+weight_decay = 0.05
+work_dir = './work_dirs/wedetect_base_3stage_s3'
+
+06/22 13:41:25 - mmengine - INFO - Using SyncBatchNorm()
+06/22 13:41:25 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+(NORMAL      ) PipelineSwitchHook                 
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_test_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.40s)
+creating index...
+Done (t=0.43s)
+creating index...
+index created!
+Done (t=0.46s)
+creating index...
+index created!
+index created!
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.37s)
+creating index...
+index created!
+Done (t=0.43s)
+creating index...
+index created!
+Done (t=0.42s)
+creating index...
+loading annotations into memory...
+index created!
+Done (t=0.39s)
+creating index...
+index created!
+loading annotations into memory...
+Loads checkpoint by local backend from path: work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/runner/checkpoint.py:347: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=map_location)
+Loads checkpoint by local backend from path: work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/runner/checkpoint.py:347: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=map_location)
+Done (t=0.41s)
+creating index...
+Loads checkpoint by local backend from path: work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/runner/checkpoint.py:347: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=map_location)
+index created!
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Loads checkpoint by local backend from path: work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/mmengine/runner/checkpoint.py:347: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=map_location)
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+06/22 13:41:31 - mmengine - INFO - Load checkpoint from work_dirs/base3stage_s3/best_coco_bbox_mAP_epoch_12.pth
+/home/siyuan/anaconda3/envs/wedetect_official/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+06/22 13:41:36 - mmengine - INFO - Epoch(test) [  50/2587]    eta: 0:03:53  time: 0.0921  data_time: 0.0283  memory: 3102  
+06/22 13:41:39 - mmengine - INFO - Epoch(test) [ 100/2587]    eta: 0:02:59  time: 0.0524  data_time: 0.0059  memory: 3102  
+06/22 13:41:41 - mmengine - INFO - Epoch(test) [ 150/2587]    eta: 0:02:35  time: 0.0472  data_time: 0.0004  memory: 3102  
+06/22 13:41:46 - mmengine - INFO - Epoch(test) [ 200/2587]    eta: 0:02:53  time: 0.0990  data_time: 0.0530  memory: 3102  
+06/22 13:41:48 - mmengine - INFO - Epoch(test) [ 250/2587]    eta: 0:02:37  time: 0.0468  data_time: 0.0003  memory: 3102  
+06/22 13:41:51 - mmengine - INFO - Epoch(test) [ 300/2587]    eta: 0:02:26  time: 0.0465  data_time: 0.0003  memory: 3102  
+06/22 13:41:53 - mmengine - INFO - Epoch(test) [ 350/2587]    eta: 0:02:17  time: 0.0468  data_time: 0.0003  memory: 3102  
+06/22 13:41:55 - mmengine - INFO - Epoch(test) [ 400/2587]    eta: 0:02:10  time: 0.0473  data_time: 0.0004  memory: 3102  
+06/22 13:41:58 - mmengine - INFO - Epoch(test) [ 450/2587]    eta: 0:02:04  time: 0.0469  data_time: 0.0003  memory: 3102  
+06/22 13:42:00 - mmengine - INFO - Epoch(test) [ 500/2587]    eta: 0:01:59  time: 0.0467  data_time: 0.0003  memory: 3102  
+06/22 13:42:02 - mmengine - INFO - Epoch(test) [ 550/2587]    eta: 0:01:54  time: 0.0468  data_time: 0.0003  memory: 3102  
+06/22 13:42:05 - mmengine - INFO - Epoch(test) [ 600/2587]    eta: 0:01:50  time: 0.0469  data_time: 0.0003  memory: 3102  
+06/22 13:42:07 - mmengine - INFO - Epoch(test) [ 650/2587]    eta: 0:01:46  time: 0.0470  data_time: 0.0003  memory: 3102  
+06/22 13:42:09 - mmengine - INFO - Epoch(test) [ 700/2587]    eta: 0:01:42  time: 0.0470  data_time: 0.0003  memory: 3102  
+06/22 13:42:12 - mmengine - INFO - Epoch(test) [ 750/2587]    eta: 0:01:38  time: 0.0472  data_time: 0.0003  memory: 3102  
+06/22 13:42:14 - mmengine - INFO - Epoch(test) [ 800/2587]    eta: 0:01:35  time: 0.0472  data_time: 0.0003  memory: 3102  
+06/22 13:42:17 - mmengine - INFO - Epoch(test) [ 850/2587]    eta: 0:01:32  time: 0.0474  data_time: 0.0003  memory: 3102  
+06/22 13:42:19 - mmengine - INFO - Epoch(test) [ 900/2587]    eta: 0:01:28  time: 0.0473  data_time: 0.0003  memory: 3102  
+06/22 13:42:21 - mmengine - INFO - Epoch(test) [ 950/2587]    eta: 0:01:25  time: 0.0476  data_time: 0.0003  memory: 3102  
+06/22 13:42:24 - mmengine - INFO - Epoch(test) [1000/2587]    eta: 0:01:22  time: 0.0474  data_time: 0.0003  memory: 3102  
+06/22 13:42:26 - mmengine - INFO - Epoch(test) [1050/2587]    eta: 0:01:19  time: 0.0475  data_time: 0.0003  memory: 3102  
+06/22 13:42:28 - mmengine - INFO - Epoch(test) [1100/2587]    eta: 0:01:16  time: 0.0476  data_time: 0.0003  memory: 3102  
+06/22 13:42:31 - mmengine - INFO - Epoch(test) [1150/2587]    eta: 0:01:14  time: 0.0476  data_time: 0.0003  memory: 3102  
+06/22 13:42:33 - mmengine - INFO - Epoch(test) [1200/2587]    eta: 0:01:11  time: 0.0479  data_time: 0.0003  memory: 3102  
+06/22 13:42:36 - mmengine - INFO - Epoch(test) [1250/2587]    eta: 0:01:08  time: 0.0479  data_time: 0.0003  memory: 3102  
+06/22 13:42:38 - mmengine - INFO - Epoch(test) [1300/2587]    eta: 0:01:05  time: 0.0482  data_time: 0.0003  memory: 3102  
+06/22 13:42:40 - mmengine - INFO - Epoch(test) [1350/2587]    eta: 0:01:03  time: 0.0483  data_time: 0.0004  memory: 3102  
+06/22 13:42:43 - mmengine - INFO - Epoch(test) [1400/2587]    eta: 0:01:00  time: 0.0480  data_time: 0.0003  memory: 3102  
+06/22 13:42:45 - mmengine - INFO - Epoch(test) [1450/2587]    eta: 0:00:57  time: 0.0483  data_time: 0.0003  memory: 3102  
+06/22 13:42:48 - mmengine - INFO - Epoch(test) [1500/2587]    eta: 0:00:55  time: 0.0488  data_time: 0.0007  memory: 3102  
+06/22 13:42:50 - mmengine - INFO - Epoch(test) [1550/2587]    eta: 0:00:52  time: 0.0482  data_time: 0.0003  memory: 3102  
+06/22 13:42:53 - mmengine - INFO - Epoch(test) [1600/2587]    eta: 0:00:49  time: 0.0486  data_time: 0.0003  memory: 3102  
+06/22 13:42:55 - mmengine - INFO - Epoch(test) [1650/2587]    eta: 0:00:47  time: 0.0483  data_time: 0.0004  memory: 3102  
+06/22 13:42:57 - mmengine - INFO - Epoch(test) [1700/2587]    eta: 0:00:44  time: 0.0480  data_time: 0.0003  memory: 3102  
+06/22 13:43:00 - mmengine - INFO - Epoch(test) [1750/2587]    eta: 0:00:42  time: 0.0502  data_time: 0.0015  memory: 3102  
+06/22 13:43:02 - mmengine - INFO - Epoch(test) [1800/2587]    eta: 0:00:39  time: 0.0510  data_time: 0.0033  memory: 3102  
+06/22 13:43:05 - mmengine - INFO - Epoch(test) [1850/2587]    eta: 0:00:37  time: 0.0488  data_time: 0.0003  memory: 3102  
+06/22 13:43:07 - mmengine - INFO - Epoch(test) [1900/2587]    eta: 0:00:34  time: 0.0483  data_time: 0.0003  memory: 3102  
+06/22 13:43:10 - mmengine - INFO - Epoch(test) [1950/2587]    eta: 0:00:32  time: 0.0484  data_time: 0.0003  memory: 3102  
+06/22 13:43:12 - mmengine - INFO - Epoch(test) [2000/2587]    eta: 0:00:29  time: 0.0482  data_time: 0.0003  memory: 3102  
+06/22 13:43:15 - mmengine - INFO - Epoch(test) [2050/2587]    eta: 0:00:26  time: 0.0483  data_time: 0.0003  memory: 3102  
+06/22 13:43:17 - mmengine - INFO - Epoch(test) [2100/2587]    eta: 0:00:24  time: 0.0484  data_time: 0.0004  memory: 3102  
+06/22 13:43:19 - mmengine - INFO - Epoch(test) [2150/2587]    eta: 0:00:21  time: 0.0486  data_time: 0.0004  memory: 3102  
+06/22 13:43:22 - mmengine - INFO - Epoch(test) [2200/2587]    eta: 0:00:19  time: 0.0490  data_time: 0.0003  memory: 3102  
+06/22 13:43:25 - mmengine - INFO - Epoch(test) [2250/2587]    eta: 0:00:16  time: 0.0557  data_time: 0.0080  memory: 3102  
+06/22 13:43:27 - mmengine - INFO - Epoch(test) [2300/2587]    eta: 0:00:14  time: 0.0490  data_time: 0.0003  memory: 3102  
+06/22 13:43:30 - mmengine - INFO - Epoch(test) [2350/2587]    eta: 0:00:11  time: 0.0494  data_time: 0.0003  memory: 3102  
+06/22 13:43:32 - mmengine - INFO - Epoch(test) [2400/2587]    eta: 0:00:09  time: 0.0495  data_time: 0.0011  memory: 3102  
+06/22 13:43:34 - mmengine - INFO - Epoch(test) [2450/2587]    eta: 0:00:06  time: 0.0486  data_time: 0.0003  memory: 3102  
+06/22 13:43:37 - mmengine - INFO - Epoch(test) [2500/2587]    eta: 0:00:04  time: 0.0488  data_time: 0.0003  memory: 3102  
+06/22 13:43:39 - mmengine - INFO - Epoch(test) [2550/2587]    eta: 0:00:01  time: 0.0485  data_time: 0.0004  memory: 3102  
+06/22 13:44:00 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=3.28s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=72.48s).
+Accumulating evaluation results...
+DONE (t=27.64s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.516
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.716
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.607
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.168
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.496
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.575
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.721
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.722
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.722
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.295
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.699
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.777
+06/22 13:45:51 - mmengine - INFO - bbox_mAP_copypaste: 0.516 0.716 0.607 0.168 0.496 0.575
+06/22 13:45:53 - mmengine - INFO - Epoch(test) [2587/2587]    coco/bbox_mAP: 0.5160  coco/bbox_mAP_50: 0.7160  coco/bbox_mAP_75: 0.6070  coco/bbox_mAP_s: 0.1680  coco/bbox_mAP_m: 0.4960  coco/bbox_mAP_l: 0.5750  data_time: 0.0022  time: 0.0501
+[rank0]:[W622 13:46:04.813840010 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+BASE3STAGE EVAL DONE

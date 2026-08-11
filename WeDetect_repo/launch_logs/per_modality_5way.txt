@@ -1,0 +1,45 @@
+
+===== zero-shot  (2614694 detections) =====
+  group         #imgs     mAP   mAP50
+  Overall       10346   0.000   0.000
+  Intraoral      1720   0.000   0.000
+  Panoramic      6666   0.000   0.000
+  Periapical      367   0.008   0.013
+  Cytology       1503   0.000   0.000
+  Histology        90   0.432   0.600
+
+===== FT base-init  (1669679 detections) =====
+  group         #imgs     mAP   mAP50
+  Overall       10346   0.454   0.630
+  Intraoral      1720   0.567   0.783
+  Panoramic      6666   0.431   0.613
+  Periapical      367   0.382   0.479
+  Cytology       1503   0.301   0.390
+  Histology        90   0.783   0.888
+
+===== FT OralCLIP-init  (1655353 detections) =====
+  group         #imgs     mAP   mAP50
+  Overall       10346   0.410   0.571
+  Intraoral      1720   0.561   0.777
+  Panoramic      6666   0.363   0.521
+  Periapical      367   0.400   0.508
+  Cytology       1503   0.293   0.380
+  Histology        90   0.733   0.856
+
+===== OralCLIP+DentalBERT 3-stage  (1408796 detections) =====
+  group         #imgs     mAP   mAP50
+  Overall       10346   0.487   0.678
+  Intraoral      1720   0.565   0.782
+  Panoramic      6666   0.482   0.686
+  Periapical      367   0.404   0.517
+  Cytology       1503   0.309   0.404
+  Histology        90   0.775   0.895
+
+===== base-all 3-stage  (1643364 detections) =====
+  group         #imgs     mAP   mAP50
+  Overall       10346   0.516   0.716
+  Intraoral      1720   0.575   0.790
+  Panoramic      6666   0.525   0.744
+  Periapical      367   0.406   0.503
+  Cytology       1503   0.316   0.411
+  Histology        90   0.757   0.876
