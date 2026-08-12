@@ -1,0 +1,56 @@
+# Evaluate an OralDetect checkpoint on one or more benches.
+# This file is the ONLY thing you edit. The .sh just allocates GPUs; run_eval.py does the work.
+
+paths:
+  wedetect:   /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/WeDetect
+  # The same single config the finetune uses. Eval needs no config of its own: that file already
+  # carries a complete test_pipeline / test_dataloader / test_evaluator, and reusing it guarantees
+  # the eval model is byte-identical to the trained one. run_eval.py only redirects the ann_file.
+  config:     /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/WeDetect/config/oraldetect_finetune.py
+
+  # WHAT IS BEING SCORED. Default = the model the paper reports.
+  # Swap to the finetune output once you have one, e.g.
+  #   /ix/lzhan/siyuan/exps/OralDetect_Family/oraldetect_finetune/best_coco_macro4_mAP_epoch_N.pth
+  checkpoint: /ix/lzhan/siyuan/exps/OralDetect_Family/v14_calib_v2/stageC/best_coco_macro4_mAP_epoch_6.pth
+
+  # one subdirectory per bench is created under here, each holding preds.bbox.json
+  out_dir:    /ix/lzhan/siyuan/exps/OralDetect_Family/test_eval/v14_stagec_rerun
+
+data:
+  data_root:   /ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/
+  class_names: /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_names_oraldetect.json
+  # Swap this alone to re-run the prompt-length ablation -- the class NAMES stay the same, only the
+  # texts the tower embeds change. The L0..L5 variants live next to it as class_texts_tokenlen_*.json.
+  class_texts: /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json
+
+  # per_modality -> per-modality mAP + MACRO-5 (report) + MACRO-4 (select). Needs a `modality` key
+  #                 on every image record; all three benches below have one.
+  # coco         -> plain COCO mAP. Required for any dataset built outside this project.
+  evaluator:   per_modality
+
+# Every bench listed here is scored in one job. `data_root` is optional and overrides data.data_root.
+benches:
+  - name: main
+    ann:  /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_test.json
+
+  # Open-set: datasets held out of training entirely, images under a separate root.
+  # Both are single-modality, so their MACRO-5/MACRO-4 collapse to that one modality -- read the
+  # per-modality line, not the macro.
+  - name: openset_dentalplaque
+    ann:  /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_openset_dentalplaque.json
+    data_root: /ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_openset/
+
+  - name: openset_kunt2023
+    ann:  /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_openset_kunt2023.json
+    data_root: /ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_openset/
+
+eval:
+  gpus: 4           # run_eval.py asserts this equals torchrun's world size
+  batch_per_gpu: 1  # the eval pipeline is LetterResize to a fixed 1024, so >1 is safe, but 1 is
+                    # what every published number was produced with -- leave it alone to compare.
+  dump_preds: true  # write preds.bbox.json per bench, for offline OralDetect/tools/per_modality_eval.py
+
+# Abort if the checkpoint would not land cleanly on the model built from `config`.
+# mmengine drops mismatched keys with only a log line, so without this a drifted architecture
+# silently scores a partly-random model. Set false only if you mean it.
+strict_load: true
