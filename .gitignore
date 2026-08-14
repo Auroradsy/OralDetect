@@ -10,7 +10,6 @@ pretrained
 pretrained_models
 *.md
 
-OralDetect/analysis
 OralDetect/bench_jsons
 OralDetect/datas
 OralDetect/visualization
@@ -18,3 +17,7 @@ OralDetect/tools
 OralDetect/_outdate_files
 OralDetect/launch_logs
 OralDetect/*.md
+
+# Launchers: the *_ours.* copies hold our absolute paths, cluster account and checkpoint
+# locations. The unsuffixed ones are the shipped templates and DO go in.
+OralDetect/launch_bash/*_ours.*

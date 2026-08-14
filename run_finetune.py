@@ -73,6 +73,10 @@ def build_cfg(y: dict):
     over = {
         "load_from": y["paths"]["init"],
         "model.num_train_classes": n,
+        # optional: the config bakes in an absolute path to the DentalBERT text tower, which is
+        # only right on the machine it was written on. Anyone else must be able to redirect it.
+        **({"model.backbone.text_model.model_name": y["paths"]["text_tower"]}
+           if y["paths"].get("text_tower") else {}),
         "model.num_test_classes": n,
         "model.bbox_head.head_module.num_classes": n,
         "model.train_cfg.assigner.num_classes": n,

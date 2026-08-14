@@ -1,41 +1,51 @@
-# Finetune OralDetect from our own trained detector.
-# This file is the ONLY thing you edit. The .sh just allocates GPUs; run_finetune.py does the work.
+# Finetune OralDetect. Fill in the paths below -- they are placeholders.
+#
+# This file is the ONLY thing you edit. run_finetune.py does the rest -- path checks, the resolved
+# config, the checkpoint key diff, auto-resume. Relative paths are resolved from the repo root.
 
 paths:
   # framework root -- goes on PYTHONPATH and is the cwd for training
-  wedetect:   /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/WeDetect
+  wedetect:   OralDetect/WeDetect
   # the recipe (schedule / pipeline / evaluator). Its architecture must match `init` below.
-  config:     /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/WeDetect/config/oraldetect_finetune.py
-  # the weights we finetune FROM: v14 stage C, the model the paper reports (selected on MACRO-4).
-  # NOT wedetect_base.pth and NOT any *_init.pth -- those are pretrains that still have to learn
-  # detection. This one is already a converged dental detector.
-  init:       /ix/lzhan/siyuan/exps/OralDetect_Family/v14_calib_v2/stageC/best_coco_macro4_mAP_epoch_6.pth
-  work_dir:   /ix/lzhan/siyuan/exps/OralDetect_Family/oraldetect_finetune
+  config:     OralDetect/WeDetect/config/oraldetect_finetune.py
+
+  # WHAT YOU START FROM.
+  #   oraldetect.pth       the released detector -- already converged. Use lr 5e-6 / 6 epochs.
+  #   oraldetect_init.pth  towers loaded, neck+head random -- has to learn detection.
+  #                        Use lr 2e-5 / 12 epochs.
+  init:       /path/to/weights/OralDetect/oraldetect.pth
+
+  # The text tower, an HF-format directory (config.json + model.safetensors + tokenizer).
+  # `OralCLIP/oralbert/` from the weights repo. Required: the detector rebuilds its text tower
+  # from here on every forward pass.
+  text_tower: /path/to/weights/OralCLIP/oralbert
+
+  work_dir:   /path/to/output
 
 data:
-  # Defaults = the OralDetect training set, i.e. "keep training the paper model on its own data".
-  # Point these at another COCO dataset to carry OralDetect onto it -- but read the two warnings.
-  data_root:   /ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/
-  train_ann:   /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_train.json
-  val_ann:     /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json
-  class_names: /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_names_oraldetect.json
-  class_texts: /ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json
+  data_root:   /path/to/your/images/          # `file_name` in the COCO files is relative to this
+  train_ann:   /path/to/your/instances_train.json
+  val_ann:     /path/to/your/instances_val.json
 
-  # per_modality -> PerModalityCocoMetric, reports MACRO-5 and selects on MACRO-4.
-  # coco         -> plain COCO mAP. REQUIRED for any dataset built outside this project:
-  #                 PerModalityCocoMetric groups by an explicit `modality` key on every image
-  #                 record and raises if it is absent. Note COCO's mAP is a CLASS-macro, and our
-  #                 class slots are wildly unbalanced -- see CLAUDE.md §3 before comparing it.
-  evaluator:   per_modality
+  # class_names: list[str].          The ORDER defines the label indices.
+  # class_texts: list[list[str]].    Same order, one list of prompts per class.
+  # The loader matches categories BY NAME: every `categories[].name` in your COCO json must be a
+  # byte-exact match for a string in class_names, or its annotations are silently dropped.
+  class_names: /path/to/your/class_names.json
+  class_texts: /path/to/your/class_texts.json
+
+  # coco         -> plain COCO mAP. Use this for any dataset that is not ours.
+  # per_modality -> per-modality mAP + MACRO-5/MACRO-4. Requires an explicit `modality` key on
+  #                 every image record; raises if absent.
+  evaluator:   coco
 
 train:
-  lr: 5.0e-6        # a quarter of the 2e-5 the from-scratch arms use: stage C already ran its
-                    # tail at 2e-6, and coming back up to 2e-5 would undo it.
-  epochs: 6
-  gpus: 4           # run_finetune.py asserts this equals torchrun's world size
-  batch_per_gpu: 4  # 4 x 4 = effective 16, same as the v14 stages, at 1024x1024
+  lr: 5.0e-6          # see `init` above -- 2.0e-5 when starting from oraldetect_init.pth
+  epochs: 6           #                     12
+  gpus: 4             # must equal torchrun's --nproc_per_node; run_finetune.py asserts it
+  batch_per_gpu: 4    # 4 x 4 = effective 16 at 1024x1024, ~28 GB/GPU
 
-# Abort before training if load_from would not land cleanly on the model.
-# A silent key mismatch means you finetune a partly random model and only find out from the
-# numbers, hours later. Set to false only if you are deliberately changing the architecture.
+# Abort before training if `init` would not land cleanly on the model built from `config`.
+# mmengine drops mismatched keys with only a log line, so without this a drifted architecture
+# trains a partly random model that looks fine until the numbers come in.
 strict_load: true
