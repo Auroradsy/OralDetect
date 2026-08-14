@@ -211,23 +211,3 @@ With `evaluator: coco` you get standard COCO mAP. Re-score any prediction file o
 ```bash
 python OralDetect/tools/per_modality_eval.py your_data/instances_test.json <run>/preds.bbox.json
 ```
-
-## Reproducing our benchmark
-
-Optional, and only if you downloaded `OralDetect-Bench`. Set `data.data_root` to the bench images,
-`evaluator: per_modality`, and list `instances_oraldetect_test.json` as the bench.
-
-Report **MACRO-5** — the equal-weight mean of the 5 per-modality mAPs. Select checkpoints on
-**MACRO-4** (histology excluded: its val split is 35 images and swings ±0.13 between epochs).
-
-> **Do not report `coco/bbox_mAP` on our benchmark.** It is a macro over **classes**, not
-> modalities, and panoramic owns 48 of the 87 class slots — 36 of them pure tooth/quadrant
-> numbering. It largely measures tooth-counting on panoramic radiographs.
-
-## Notes
-
-- Our 87-class vocabulary shares **15 category ids across modalities** (`dental caries` and 12 FDI
-  tooth numbers among them), which is why our own benchmark is scored per modality. Your dataset has
-  no such structure — plain `evaluator: coco` is the right choice.
-- `OralDetect/Detect_data_status.md` — data provenance and per-modality label merges (§0 = current
-  state). `OralDetect/Detect_bench.md` — benchmark definition and results.
