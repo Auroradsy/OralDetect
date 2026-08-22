@@ -1,65 +1,24 @@
-"""Finetune OralDetect from our own trained detector -- SELF-CONTAINED, no `_base_`.
+"""OralDetect — the one config. Self-contained, no `_base_`.
 
-This is a FLATTENED config: mmengine's `Config.dump()` resolved what used to be a five-level
-inheritance chain (finetune -> v14_base -> base_1024 -> wedetect_base -> default_runtime) into one
-file, so this directory now holds exactly one config and nothing here depends on anything else.
-Verified equivalent to the chain it replaced: 70/70 top-level keys equal, and the models built from
-each have identical state_dicts (1126 params, 0 key or shape differences).
+Flattened from a five-level inheritance chain with mmengine's `Config.dump()`, and verified
+equivalent to it: 70/70 resolved keys equal, identical `state_dict` (1126 params, 0 differences).
 
-Paths, vocabulary and hyper-parameters are OVERWRITTEN AT RUNTIME by `run_finetune.py` from
-`OralDetect/launch_bash/finetune_oraldetect.yaml`. The values baked in below are the defaults --
-edit the yaml, not this file.
+Used by BOTH `run_finetune.py` and `run_eval.py`. Every path and hyper-parameter below is a
+DEFAULT that the launcher overwrites at runtime from its yaml — edit the yaml, not this file.
 
-WHAT IT STARTS FROM. `load_from` is `v14_calib_v2/stageC/best_coco_macro4_mAP_epoch_6.pth`: the
-model the paper reports, selected on MACRO-4. NOT `wedetect_base.pth` and NOT any `*_init.pth` --
-those are pretrains that still have to learn detection. This one is already a converged dental
-detector, which is why the schedule below is short and slow.
-
-THE ARCHITECTURE HERE MUST MATCH THAT CHECKPOINT. `load_from` in mmengine is forgiving: keys that
-do not match are dropped with a log line and training proceeds, so a drifted architecture gives you
-a partly random model that trains happily and is quietly worse. `run_finetune.py` guards this --
-it builds the model, diffs the state_dict against the checkpoint, and refuses to start on any
-missing / unexpected / mis-shaped key (`strict_load: false` in the yaml to override). The three
-things that must not change: the `DentalBertLanguageBackbone` text tower, `ModalityCalibration`,
-and 1024x1024.
-
-SWAPPING IN A DIFFERENT DATASET -- two things bite:
-
-  * Vocabulary size is SHAPE-SAFE up to 256. YOLOWorldHeadModule sizes its classifier as
-    `cls_out_channels = max(in_channels[0], num_classes)` = `max(256, n)`, and the class prototypes
-    come from the text tower rather than a learned per-class matrix. Past 256 the cls_preds convs
-    change shape and load_from drops them -- that is a different experiment, not a finetune.
-    `run_finetune.py` refuses past 256.
-  * `PerModalityCocoMetric` groups by an explicit `modality` key on every image record. A dataset
-    built outside this project will not have one and the metric raises. Set `data.evaluator: coco`
-    in the yaml. You then get plain COCO mAP, which is a CLASS-macro over wildly unbalanced class
-    slots -- read CLAUDE.md section 3 before comparing that number to anything.
-
-SCHEDULE -- deliberately not the 12-epoch recipe, which starts from a pretrain and has to learn
-detection. This starts from a converged detector, so the job is to adapt, not to train:
-  * lr 5e-6, a quarter of the from-scratch 2e-5. Stage C already ran the tail of its schedule at
-    2e-6; coming back up to 2e-5 would undo it.
-  * 6 epochs, mosaic OFF THROUGHOUT (`train_pipeline_stage2` is the train pipeline from epoch 0,
-    and `custom_hooks` is empty so no switch hook fires). Mosaic composites four images and teaches
-    robustness to context that never appears at test time -- worth it when learning detection from
-    scratch, counterproductive for a short adaptation.
-  * warmup 200 iters, not 1000: 1000 is a large slice of a 6-epoch run, and nothing here is
-    randomly initialised, so there is nothing to ease in.
-  * val every epoch -- a 6-epoch run has no room for a 2-epoch blind spot.
-  * save_best on MACRO-4, not MACRO-5: histology's val split is 35 images and swings +-0.13 between
-    adjacent epochs, so letting it vote means 35 images pick the model. See CLAUDE.md section 3.
-
-The archived multi-file lineage (v14 stages, the abl640 arms, tokenlen, openset, and every earlier
-recipe) is in `OralDetect/_outdate_files/WeDetect/config/`.
+Do not change the text tower, the modality calibration or the 1024x1024 input unless you mean to:
+the released checkpoint will no longer load cleanly, and mmengine drops mismatched keys with only
+a log line. The launchers diff the checkpoint against the model and refuse to start on a mismatch.
 """
 
-CLASS_NAMES = '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_names_oraldetect.json'
-CLASS_TEXT = '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json'
-DATAS = '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas'
-DATA_ROOT = '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/'
-DENTALBERT = '/ix/lzhan/siyuan/exps/OralDetect_Family/our_ckpts/oralbert/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext_dental_mlm/final'
-TEST_ANN = '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json'
-TRAIN_ANN = '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_train.json'
+
+CLASS_NAMES = '/path/to/class_names.json'
+CLASS_TEXT = '/path/to/class_texts.json'
+DATAS = '/path/to/datas'
+DATA_ROOT = '/path/to/images/'
+DENTALBERT = '/path/to/oralbert'
+TEST_ANN = '/path/to/instances_val.json'
+TRAIN_ANN = '/path/to/instances_train.json'
 affine_scale = 0.5
 albu_train_transforms = [
     dict(p=0.01, type='Blur'),
@@ -97,7 +56,7 @@ img_scale = (
     1024,
     1024,
 )
-load_from = '/ix/lzhan/siyuan/exps/OralDetect_Family/v14_calib_v2/stageC/best_coco_macro4_mAP_epoch_6.pth'
+load_from = '/path/to/oraldetect.pth'
 log_level = 'INFO'
 log_processor = dict(by_epoch=True, type='LogProcessor', window_size=50)
 loss_bbox_weight = 7.5
@@ -204,7 +163,7 @@ model = dict(
         text_model=dict(
             frozen_modules=[],
             model_name=
-            '/ix/lzhan/siyuan/exps/OralDetect_Family/our_ckpts/oralbert/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext_dental_mlm/final',
+            '/path/to/oralbert',
             model_size='base',
             type='DentalBertLanguageBackbone'),
         type='MultiModalYOLOBackbone'),
@@ -371,14 +330,14 @@ test_dataloader = dict(
     batch_size=1,
     dataset=dict(
         class_text_path=
-        '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json',
+        '/path/to/class_texts.json',
         dataset=dict(
             ann_file=
-            '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json',
+            '/path/to/instances_val.json',
             batch_shapes_cfg=None,
             data_prefix=dict(img=''),
             data_root=
-            '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/',
+            '/path/to/images/',
             metainfo=dict(
                 classes=(
                     'abnormal oral epithelial cell',
@@ -507,7 +466,7 @@ test_dataloader = dict(
     sampler=dict(shuffle=False, type='DefaultSampler'))
 test_evaluator = dict(
     ann_file=
-    '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json',
+    '/path/to/instances_val.json',
     metric='bbox',
     type='PerModalityCocoMetric')
 test_pipeline = [
@@ -572,13 +531,13 @@ train_dataloader = dict(
     collate_fn=dict(type='yolow_collate'),
     dataset=dict(
         class_text_path=
-        '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json',
+        '/path/to/class_texts.json',
         dataset=dict(
             ann_file=
-            '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_train.json',
+            '/path/to/instances_train.json',
             data_prefix=dict(img=''),
             data_root=
-            '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/',
+            '/path/to/images/',
             filter_cfg=dict(filter_empty_gt=False, min_size=32),
             metainfo=dict(
                 classes=(
@@ -745,13 +704,13 @@ train_dataloader = dict(
     sampler=dict(shuffle=True, type='DefaultSampler'))
 train_dataset = dict(
     class_text_path=
-    '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json',
+    '/path/to/class_texts.json',
     dataset=dict(
         ann_file=
-        '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_train.json',
+        '/path/to/instances_train.json',
         data_prefix=dict(img=''),
         data_root=
-        '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/',
+        '/path/to/images/',
         filter_cfg=dict(filter_empty_gt=False, min_size=32),
         metainfo=dict(
             classes=(
@@ -1132,14 +1091,14 @@ val_dataloader = dict(
     batch_size=1,
     dataset=dict(
         class_text_path=
-        '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json',
+        '/path/to/class_texts.json',
         dataset=dict(
             ann_file=
-            '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json',
+            '/path/to/instances_val.json',
             batch_shapes_cfg=None,
             data_prefix=dict(img=''),
             data_root=
-            '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/',
+            '/path/to/images/',
             metainfo=dict(
                 classes=(
                     'abnormal oral epithelial cell',
@@ -1268,14 +1227,14 @@ val_dataloader = dict(
     sampler=dict(shuffle=False, type='DefaultSampler'))
 val_dataset = dict(
     class_text_path=
-    '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/class_texts_oraldetect.json',
+    '/path/to/class_texts.json',
     dataset=dict(
         ann_file=
-        '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json',
+        '/path/to/instances_val.json',
         batch_shapes_cfg=None,
         data_prefix=dict(img=''),
         data_root=
-        '/ix/lzhan/siyuan/datasets/processed_datas/OralDetect_Family/OralDetect_data_by_modality/',
+        '/path/to/images/',
         metainfo=dict(
             classes=(
                 'abnormal oral epithelial cell',
@@ -1399,7 +1358,7 @@ val_dataset = dict(
     type='MultiModalDataset')
 val_evaluator = dict(
     ann_file=
-    '/ihome/lzhan/sid51/projects/VLM/OralDetect-Family/OralDetect/datas/instances_oraldetect_val.json',
+    '/path/to/instances_val.json',
     metric='bbox',
     type='PerModalityCocoMetric')
 vis_backends = [

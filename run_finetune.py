@@ -30,11 +30,38 @@ def say(*a) -> None:
         print(*a, flush=True)
 
 
+def resolve(y: dict, yaml_path: str) -> dict:
+    """Make every path in the yaml absolute, anchored at the repo root.
+
+    The launcher chdir's into `paths.wedetect` before building anything, so a relative path left
+    as-is would resolve against the framework directory rather than the repo. Anchoring here, once,
+    is what lets the shipped yaml use short relative paths and still work from any cwd.
+
+    The repo root is three levels above the yaml (repo/OralDetect/launch_bash/x.yaml).
+    """
+    root = osp.dirname(osp.dirname(osp.dirname(osp.abspath(yaml_path))))
+    KEYS = {"wedetect", "config", "init", "checkpoint", "text_tower", "work_dir", "out_dir",
+            "data_root", "train_ann", "val_ann", "class_names", "class_texts", "ann"}
+
+    def fix(v):
+        return v if osp.isabs(v) else osp.normpath(osp.join(root, v))
+
+    for sec in ("paths", "data"):
+        for k, v in (y.get(sec) or {}).items():
+            if k in KEYS and isinstance(v, str):
+                y[sec][k] = fix(v)
+    for b in (y.get("benches") or []):
+        for k in ("ann", "data_root"):
+            if k in b and isinstance(b[k], str):
+                b[k] = fix(b[k])
+    return y
+
+
 def load_yaml(path: str) -> dict:
     if not osp.isfile(path):
         sys.exit(f"FATAL: no such yaml -- {path}")
     with open(path) as f:
-        cfg = yaml.safe_load(f)
+        cfg = resolve(yaml.safe_load(f), path)
     missing = []
     for section, key, kind in REQUIRED_PATHS:
         try:

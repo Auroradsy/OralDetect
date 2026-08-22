@@ -99,7 +99,7 @@ Three files. Standard COCO detection format plus two vocabulary files.
 
 ```text
 your_data/
-├── images/                     any layout; `file_name` is relative to this
+├── images/                     `file_name` is relative to this
 ├── instances_train.json        COCO
 ├── instances_val.json          COCO
 ├── class_names.json            list[str]        -> ["caries", "calculus", ...]

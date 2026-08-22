@@ -9,6 +9,9 @@ outputs
 pretrained
 pretrained_models
 *.md
+!Readme.md
+# SKILL.md is the skill -- the blanket *.md rule above would drop it and ship the scripts alone.
+!skills/**/*.md
 
 OralDetect/bench_jsons
 OralDetect/datas
@@ -26,3 +29,7 @@ OralDetect/launch_bash/*_ours.*
 __pycache__/
 *.pyc
 work_dirs/
+
+# scratch launchers while walking the README
+OralDetect/launch_bash/my_*
+skill_draft/
